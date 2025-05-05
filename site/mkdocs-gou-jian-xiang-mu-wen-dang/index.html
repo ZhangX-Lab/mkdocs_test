@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>About - mkdocs test</title>
+    <title>gitbook编写mkdocs文档 - mkdocs test</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "About";
-        var mkdocs_page_input_path = "about.md";
+        var mkdocs_page_name = "gitbook\u7f16\u5199mkdocs\u6587\u6863";
+        var mkdocs_page_input_path = "mkdocs-gou-jian-xiang-mu-wen-dang.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -43,8 +43,18 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../explain/">explain</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">本地编写上传博客</a>
+                </li>
+              </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">About</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">gitbook编写mkdocs文档</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
       </div>
@@ -61,7 +71,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">About</li>
+      <li class="breadcrumb-item active">gitbook编写mkdocs文档</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -70,12 +80,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="mkdocs">mkdocs构建项目文档</h1>
+<p>首先，安装mkdocs，这是一个Python模块，因此，使用miniconda构建对应的虚拟环境，在安装mkdocs库。</p>
+<pre><code class="language-python"># 安装环境和库
+conda create -n mkdocs python=3.9
+conda activate mkdocs
+pip install mkdocs
+
+# 在自己的项目文件夹下
+mkdocs new .
+#在里面主要是修改mkdocs.yml文件和添加自己的md文件
+
+# 本地查看演示效果
+mkdocs serve
+</code></pre>
+<p>之后，部署到github中，作为项目的一部分。需要保准本地项目文件夹与远程github仓库进行关联，然后使用<code>mkdocs gh-deploy</code>进行自动部署，会自动创建gh-pages分支并且上传对应的代码。</p>
+<blockquote>
+<p>注：需要保证本地项目名称和远程名称名字是一致的，不然不能自动部署。</p>
+</blockquote>
+<figure><img src="../gitbook/assets/image-20250505182759834.png" alt=""><figcaption></figcaption></figure>
+
+<p>成功之后，如下所示：</p>
+<figure><img src="../gitbook/assets/image-20250505182811035.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../gitbook/assets/image-20250505182903436.png" alt=""><figcaption></figcaption></figure>
+
+<p>参考：<a href="https://www.mkdocs.org/getting-started/">开始使用-Mkdom --- Getting Started - MkDocs</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/690666535">使用MkDocs轻松搞定Python项目文档 - 知乎</a></p>
+<p><a href="https://blog.csdn.net/m0_62342492/article/details/140589266">mkdocs 部署到github_mkdocs github-CSDN博客</a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="btn btn-neutral float-left" title="本地编写上传博客"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -98,7 +135,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

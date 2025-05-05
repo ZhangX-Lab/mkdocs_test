@@ -1,5 +1,7 @@
 site_name: mkdocs test
 nav:
   - Home: index.md
-  - About: about.md
+  - explain: explain.md
+  - 本地编写上传博客: 构建个人博客.md
+  - gitbook编写mkdocs文档: mkdocs-gou-jian-xiang-mu-wen-dang.md
 theme: readthedocs
